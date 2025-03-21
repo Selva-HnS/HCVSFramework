@@ -24,7 +24,7 @@ let package = Package(
         ),
         .target(
             name: "HCVSFramework",
-            dependencies: ["HCVSFramework"]
+            dependencies: ["CVSInference"]
         ),
         .testTarget(
             name: "MyPackageTests",
