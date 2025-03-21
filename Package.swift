@@ -5,29 +5,23 @@ import PackageDescription
 
 let package = Package(
     name: "HCVSFramework",
-    platforms: [
-        .iOS(.v12)
-    ],
     products: [
+        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "HCVSFramework",
-            targets: ["HCVSFramework"]
-        ),
-    ],
-    dependencies: [
-        // Add any other dependencies here
+            targets: ["HCVSFramework"]),
     ],
     targets: [
-        .binaryTarget(
-            name: "CVSInference",
-            path: "./CVSInference.xcframework"
-        ),
+        // Targets are the basic building blocks of a package, defining a module or a test suite.
+        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "HCVSFramework",
-            dependencies: ["CVSInference"]
-        ),
+            name: "HCVSFramework"),
+        .binaryTarget(
+                    name: "CVSInference",
+                    path: "./HCVSFramework/CVSInference.xcframework"
+                ),
         .testTarget(
-            name: "MyPackageTests",
+            name: "HCVSFrameworkTests",
             dependencies: ["HCVSFramework"]
         ),
     ]
