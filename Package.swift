@@ -22,7 +22,7 @@ let package = Package(
             dependencies: ["CVSInference"]),
         .binaryTarget(
                     name: "CVSInference",
-                    path: "./CVSInference.xcframework"
+                    path: "./Sources/CVSInference.xcframework"
                 ),
         .testTarget(
             name: "HCVSFrameworkTests",
